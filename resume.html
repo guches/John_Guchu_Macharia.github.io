@@ -3,293 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume - International Partnership & Corporate Operations Leader</title>
-    <style>
-        /* Base Reset & Fluid Typography */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* 
-          Forced Scrolling Safeguard:
-          Ensures that even if an iframe, browser wrapper, or container tries to lock heights,
-          the page will strictly allow natural, infinite vertical scrolling.
-        */
-        html, body {
-            height: auto !important;
-            min-height: 100%;
-            overflow-y: auto !important;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.5;
-            color: #333333;
-            background-color: #f4f6f9;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            height: auto !important;
-            overflow: visible !important;
-        }
-
-        /* Profile Header Section */
-        .profile-header {
-            text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 3px solid #003366;
-            margin-bottom: 30px;
-        }
-        .profile-name {
-            font-size: 2.4rem;
-            color: #003366;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-        .profile-title {
-            font-size: 1.15rem;
-            color: #555555;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-            color: #666666;
-        }
-        .contact-info span strong {
-            color: #003366;
-        }
-
-        /* Section Layout */
-        section {
-            margin-bottom: 30px;
-        }
-        .section-title {
-            font-size: 1.3rem;
-            color: #003366;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 4px;
-            margin-bottom: 15px;
-        }
-
-        /* Dynamic Grid Layouts */
-        .skills-grid, .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .skill-item {
-            background-color: #f0f4f8;
-            color: #003366;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            border-left: 4px solid #003366;
-        }
-        .cert-item {
-            background-color: #f9fbfd;
-            color: #444444;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.88rem;
-            font-weight: 500;
-            border-left: 4px solid #4f5d75;
-        }
-
-        /* Split Columns for Lower Elements */
-        .bottom-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        /* Job & Education Entry Styling */
-        .job-entry, .edu-entry {
-            margin-bottom: 25px;
-        }
-        .job-entry:last-child, .edu-entry:last-child {
-            margin-bottom: 0;
-        }
-        .job-header, .edu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 2px;
-        }
-        .job-title, .edu-degree {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #111111;
-            max-width: 75%;
-        }
-        .job-meta, .edu-institution {
-            font-size: 0.95rem;
-            color: #4f5d75;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .job-timeline, .edu-timeline {
-            font-size: 0.95rem;
-            color: #777777;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        /* Accomplishment Lists */
-        .accomplishments-list {
-            list-style-type: disc;
-            margin-left: 20px;
-            color: #444444;
-        }
-        .accomplishments-list li {
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-            text-align: justify;
-        }
-        .accomplishments-list strong {
-            color: #000000;
-        }
-
-        /* Sub-project Internal Lists */
-        .nested-list {
-            list-style-type: circle;
-            margin-left: 20px;
-            margin-top: 4px;
-            margin-bottom: 4px;
-        }
-        .nested-list li {
-            margin-bottom: 3px;
-            font-size: 0.92rem;
-            color: #555555;
-        }
-
-        /* Responsive Mobile Layouts */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px 10px;
-            }
-            .container {
-                padding: 25px;
-            }
-            .job-header, .edu-header {
-                flex-direction: column;
-            }
-            .job-title, .edu-degree {
-                max-width: 100%;
-            }
-            .job-timeline, .edu-timeline {
-                margin-top: 2px;
-                margin-bottom: 4px;
-            }
-            .skills-grid, .certifications-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .bottom-layout {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        /* Automated Print Configurations */
-        @media print {
-            html, body {
-                background-color: #ffffff;
-                padding: 0;
-                overflow: visible !important;
-            }
-            .container {
-                box-shadow: none;
-                padding: 0;
-                max-width: 100%;
-                overflow: visible !important;
-            }
-            section {
-                page-break-inside: auto;
-                break-inside: auto;
-            }
-            .job-entry, .edu-entry {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-    </style>
+    <title>Professional Resume & Portfolio</title>
 </head>
 <body>
 
-<div class="container">
-    
     <!-- Profile Header Section -->
-    <header class="profile-header">
-        <h1 class="profile-name">YOUR NAME</h1>
-        <div class="profile-title">International Partnership & Corporate Operations Leader</div>
-        <div class="contact-info">
-            <span><strong>Email:</strong> john.g.macharia@gmail.com</span>
-            <span><strong>Phone:</strong> +254 726 396 674</span>
-            <span><strong>Location:</strong> Nairobi, Kenya</span>
-            <span><strong>LinkedIn:</strong> linkedin.com</span>
-        </div>
-    </header>
+    <center>
+        <h1>YOUR NAME</h1>
+        <h3>International Partnership & Corporate Operations Leader</h3>
+        <p>
+            <b>Email:</b> email@example.com | 
+            <b>Phone:</b> +254 7XX XXX XXX | 
+            <b>Location:</b> Nairobi, Kenya | 
+            <b>LinkedIn:</b> linkedin.com
+        </p>
+    </center>
+
+    <hr>
 
     <!-- Professional Summary -->
-    <section>
-        <h2 class="section-title">Professional Summary</h2>
-        <p style="font-size: 0.98rem; color: #444444; text-align: justify;">
-            Highly accomplished Program and Operations Manager with extensive experience directing high-level strategic partnerships, cross-functional international collaborations, and large-scale digital transformations within diplomatic and corporate sectors. Proven track record driving AI capacity building, re-engineering complex customer workflows, managing key international stakeholder ecosystems (World Bank, UN, UK Gov), and delivering massive efficiency gains across national-level initiatives.
-        </p>
-    </section>
+    <h2>Professional Summary</h2>
+    <p>
+        Highly accomplished Program and Operations Manager with extensive experience directing high-level strategic partnerships, cross-functional international collaborations, and large-scale digital transformations within diplomatic and corporate sectors. Proven track record driving AI capacity building, re-engineering complex customer workflows, managing key international stakeholder ecosystems (World Bank, UN, UK Gov), and delivering massive efficiency gains across national-level initiatives.
+    </p>
+
+    <hr>
 
     <!-- Core Competencies Section -->
-    <section>
-        <h2 class="section-title">Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Strategic Partnerships</div>
-            <div class="skill-item">Program Management (PMO)</div>
-            <div class="skill-item">Digital & AI Transformation</div>
-            <div class="skill-item">Stakeholder Engagement</div>
-            <div class="skill-item">Resource & Budget Allocation</div>
-            <div class="skill-item">Business Process Mapping</div>
-            <div class="skill-item">CRM & Architecture Design</div>
-            <div class="skill-item">Change Management</div>
-            <div class="skill-item">Team Leadership (20+ Staff)</div>
-            <div class="skill-item">ISO Certification Mapping</div>
-            <div class="skill-item">SLA & KPI Management</div>
-            <div class="skill-item">Cross-Functional Efficiency</div>
-        </div>
-    </section>
+    <h2>Core Competencies</h2>
+    <ul>
+        <li>Strategic Partnerships</li>
+        <li>Program Management (PMO)</li>
+        <li>Digital & AI Transformation</li>
+        <li>Stakeholder Engagement</li>
+        <li>Resource & Budget Allocation</li>
+        <li>Business Process Mapping</li>
+        <li>CRM & Architecture Design</li>
+        <li>Change Management</li>
+        <li>Team Leadership (20+ Staff)</li>
+        <li>ISO Certification Mapping</li>
+        <li>SLA & KPI Management</li>
+        <li>Cross-Functional Efficiency</li>
+    </ul>
+
+    <hr>
 
     <!-- Work Experience Section -->
-    <section>
-        <h2 class="section-title">Work Experience</h2>
+    <h2>Work Experience</h2>
 
-        <!-- Job 1 -->
-        <div class="job-entry">
-            <div class="job-header">
-                <h3 class="job-title">ONS Programme Partnership Manager to KNBS and Somalia Partnership (SNBS/CSD)</h3>
-                <span class="job-timeline">2022 – Present</span>
-            </div>
-            <div class="job-meta">British High Commission | Nairobi, Kenya</div>
-            <ul class="accomplishments-list">
-                <li>Managed the strategic partnership between <strong>KNBS</strong> and <strong>ONS (Office for National Statistics, UK)</strong> aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
+    <!-- Job 1 -->
+    <h3>ONS Programme Partnership Manager to KNBS (Kenya National Bureau of Statistics) and Somalia Partnership (SNBS/CSD)</h3>
+    <p><b>British High Commission</b> | Nairobi, Kenya | <i>2022 – Present</i></p>
+    <ul>
+        <li>Managed the strategic partnership between <b>KNBS</b> and <b>ONS (Office of National Statistics, UK)</b> aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
+        <li>Facilitated high-level international collaborations for the UK Government acting as the primary liaison for the <b>World Bank, Stats Sweden, GPSDD, and UN agencies</b>, ensuring the delivery of mission-critical data initiatives for Kenya and Somalia.</li>
+        <li>Driving data and <b>AI capacity-building programs</b> across Kenyan Ministries, Departments, and Agencies (MDAs) to modernize public sector data governance and utilization.</li>
+        <li>Directed the end-to-end project lifecycle for <b>KNBS digital transformation</b>, including the KNBS website and the Stats-Chat AI-driven bot, significantly enhancing public data accessibility.</li>
+        <li>Managed high-impact innovation projects, such as the national <b>"AI Challenge,"</b> to integrate emerging technologies into the national government framework.</li>
+        <li>Execute rigorous <b>PMO protocols</b> by providing support in Project Planning, Risk Management, Change Control, and Benefits Realization to the Partnership Strategic Adviser.</li>
+        <li>Align regional technical capacity-building requests for KNBS (Kenya) and SNBS/CSD (Somalia) with the <b>National Strategies for the Development of Statistics (NSDS)</b> and ONS Strategy.</li>
+        <li>Monitoring comprehensive project expenditures and budget (<b>£100K per year</b>) compilations, ensuring <b>100% compliance</b> with Official Development Assistance (ODA) guidelines.</li>
+        <li>Development of concept notes and business cases to secure funding for critical activities, maintaining a clear <b>ROI</b> for all program-related investments.</li>
+        <li>Involved in the end-to-end delivery of the <b>2026 Kenya Data Festival</b> which I managed by collaborating with Government agencies, donor community, and NGOs to manage project milestones, stakeholder engagements, and logistical execution.</li>
+    </ul>
+
+    <!-- Job 2 -->
+    <h3>Head of Customer Help Desk</h3>
+    <p><b>British High Commission</b> | Nairobi, Kenya | <i>2015 - 2022</i></p>
+    <ul>
+        <li>Re-engineered the onboarding and induction framework for arriving diplomats and their dependents and country-based staff, achieving a <b>98% success rate</b> for completion within the first 72 hours of arrival.</li>
+        <li>Resolved complex cross-functional requests by collaborating with IT, Finance, Procurement, HR, and Estates by mapping process and optimization of the <b>Corporate Service processes</b>, successfully identifying and removing structural bottlenecks that led to improved efficiencies.</li>
+        <li>Exceeded service level agreements (SLAs) by maintaining a <b>90% response rate within 24 hours</b> for all external guidance queries via digital and telephonic channels.</li>
+        <li>Improved customer satisfaction (CSAT) scores to <b>92%</b> by implementing data-driven feedback loops and utilizing survey insights to refine the end-to-end customer journey.</li>
+        <li>Transformed the <b>CRM system architecture</b> to enhance ticket tracking accuracy and reduce customer effort, significantly increasing the Help Desk’s overall throughput.</li>
+        <li>Led <b>LESA (Locally Engaged Staff Association)</b> in resolving employee concerns, major outcomes were: the conversion of terminal gratuity to pension scheme issues and maternity leave change for local Staff from 3 months to 6 months.</li>
+        <li>Spearheaded the team during high-pressure periods, including the <b>COVID-19 pandemic</b>, to ensure continuity of essential mission services and staff welfare.</li>
+        <li>Facilitated high-level diplomatic visits and logistics, ensuring all corporate and security requirements were met. The visits included <b>Boris Johnson (Foreign Secretary)</b> and <b>Theresa May (Prime Minister)</b>.</li>
+    </ul>
+
+    <!-- Job 3 -->
+    <h3>Customer Service Manager</h3>
+    <p><b>KK Security Services – A GardaWorld Company</b> | Nairobi, Kenya | <i>2013 - 2015</i></p>
+    <ul>
+        <li>Managed a team of <b>14 Customer Service Officers</b> distributed in 7 branches all over the country by managing their performance as per the KPI, Training on Modern customer services practices.</li>
+        <li>Re-engineered the customer service processes by mapping out the processes for <b>ISO certification</b> using Business process mapping tools.</li>
+        <li>Prepared a <b>customer service playbook</b> for the customer service section which resulted in ease of onboarding new customer service agents and cross-departmental training of the organisation.</li>
+        <li>Delivered a project to develop the <b>CRM (Microsoft Dynamics) system</b> that was used by the Sales, Customer Service and Marketing team. This led to Customer Agent ease, collaboration with the departments.</li>
+        <li>Designed the <b>Contact Center set-up</b> that improved the customer department efficiency and the Customer journey.</li>
+        <li>Improved the data integrity of the existing records in the ERP and this led to customer service and debt collection efficiency. The improvement was from an error rate of 65% to <b>only 3% of the records</b>.</li>
+        <li>Managed the contact center and customer service KPIs within the service level of <b>80%</b> and AHT (Average Handling Time) at <b>3mins 30secs</b> for calls received.</li>
+    </ul>
+
+    <!-- Job 4 -->
+    <h3>Customer Care Team Manager</h3>
+    <p><b>Telkom Kenya</b> | Nairobi, Kenya | <i>2009 - 2013</i></p>
+    <ul>
+        <li>Managed the back office (2nd Level support) on calls escalated through the CRM system from the outsourced contact center (1st Level support) for voice and data concerns. Managed a team of <b>20 staff members</b> in the back-office section.</li>
+        <li>Re-structured the back-office section by merging <b>3 sections</b> (voice and data support team) into 1 core team for optimal structural efficiency.</li>
+        <li>Collaborated with product managers and the 3rd level support team to improve products based on active feedback loops and deep data analysis of trends.</li>
+        <li>Championed <b>Change Management projects</b> systematically aligned with the structural transformation of Telkom from a government-owned enterprise to private entity (Orange):</li>
+        <ul>
+            <li>Setting up the Customer Service Contact Center (<b>Avaya system</b>)</li>
+            <li>Migration of the IN (Intelligent Network) from <b>Ericsson to ZTE</b></li>
+            <li><b>Project Cheetah</b> – conversion of traditional landlines to CDMA network</li>
+            <li><b>3G Network Roll Out Project</b></li>
+        </ul>
+    </ul>
+
+    <!-- Job 5 -->
+    <h3>Team Leader & Online Data Analyst (Early Career)</h3>
+    <p><b>KenCall EPZ</b> | Nairobi, Kenya | <i>2006 - 2009</i></p>
+    <ul>
+        <li>Acted as Team Leader managing operations across both the <b>Dun & Bradstreet</b> account (12 agents) and the <b>SpinVox</b> account (15 agents).</li>
+        <li>Ensured all operational teams consistently achieved rigorous, structured baseline KPIs and owned on-going performance appraisal frameworks.</li>
+    </ul>
+
+    <hr>
+
+    <!-- Education Section -->
+    <h2>Education & Professional Development</h2>
+
+    <h3>Bachelor of Science / Arts (Or Your Degree Field Here)</h3>
+    <p><b>Your University / Institution</b> | Location | <i>Graduation Year</i></p>
+
+    <h3>Professional Certifications & Training</h3>
+    <p><b>Various Bodies</b> | <i>Ongoing</i></p>
+    <ul>
+        <li><b>Project Management Certification</b> (e.g., PRINCE2, PMP, Agile Scrum if applicable)</li>
+        <li><b>Business Process Mapping & Optimization</b></li>
