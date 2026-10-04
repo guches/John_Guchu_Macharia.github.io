@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume & Portfolio</title>
+    <title>Professional Resume - International Partnership & Corporate Operations Leader</title>
     <style>
         /* Base Reset & Typography */
         * {
@@ -73,14 +73,14 @@
             margin-bottom: 20px;
         }
 
-        /* Grid for Core Skills */
-        .skills-grid {
+        /* Grid Layouts */
+        .skills-grid, .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 12px;
             margin-bottom: 15px;
         }
-        .skill-item {
+        .skill-item, .course-item {
             background-color: #f0f4f8;
             color: #003366;
             padding: 10px 15px;
@@ -88,6 +88,12 @@
             font-size: 0.9rem;
             font-weight: 600;
             border-left: 4px solid #003366;
+        }
+        .course-item {
+            background-color: #f9f9f9;
+            color: #333333;
+            border-left: 4px solid #4f5d75;
+            font-weight: 500;
         }
 
         /* Job & Education Entry Styling */
@@ -143,7 +149,7 @@
             list-style-type: circle;
             margin-left: 25px;
             margin-top: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         .nested-list li {
             margin-bottom: 4px;
@@ -152,7 +158,6 @@
         }
 
         /* Responsive Design */
-       
         @media (max-width: 768px) {
             body {
                 padding: 15px 10px;
@@ -170,8 +175,25 @@
                 margin-top: 4px;
                 margin-bottom: 4px;
             }
-            .skills-grid {
+            .skills-grid, .courses-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Print Layout Optimizations */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .job-entry, .edu-entry, section {
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
         }
     </style>
@@ -188,7 +210,7 @@
             <span><strong>Email:</strong> email@example.com</span>
             <span><strong>Phone:</strong> +254 7XX XXX XXX</span>
             <span><strong>Location:</strong> Nairobi, Kenya</span>
-            <span><strong>LinkedIn:</strong> ://linkedin.com</span>
+            <span><strong>LinkedIn:</strong> linkedin.com</span>
         </div>
     </header>
 
@@ -219,6 +241,16 @@
         </div>
     </section>
 
+    <!-- Key Achievements -->
+    <section>
+        <h2 class="section-title">Key Achievements</h2>
+        <ul class="accomplishments-list" style="margin-bottom: 15px;">
+            <li><strong>Metrics Improvement:</strong> Consistently elevated core service performance metrics (CSAT, NPS, SLA adherence) across diverse corporate sectors through target business process management and deep process re-engineering.</li>
+            <li><strong>Stakeholder Matrix Management:</strong> Recognized for strong international stakeholder management, robust delivery visibility, and an innate ability to drive fast action and closures across matrixed, complex environments.</li>
+            <li><strong>PMP Preparation:</strong> Successfully completed 35 contact hours of formal PMP training from Computer Pride (certification exam currently pending).</li>
+        </ul>
+    </section>
+
     <!-- Work Experience Section -->
     <section>
         <h2 class="section-title">Work Experience</h2>
@@ -231,16 +263,8 @@
             </div>
             <div class="job-meta">British High Commission | Nairobi, Kenya</div>
             <ul class="accomplishments-list">
-                <li>Managed the strategic partnership between **KNBS** and **ONS (Office of National Statistics, UK)** aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
-                <li>Facilitated high-level international collaborations for the UK Government acting as the primary liaison for the **World Bank, Stats Sweden, GPSDD, and UN agencies**, ensuring the delivery of mission-critical data initiatives for Kenya and Somalia.</li>
-                <li>Driving data and **AI capacity-building programs** across Kenyan Ministries, Departments, and Agencies (MDAs) to modernize public sector data governance and utilization.</li>
-                <li>Directed the end-to-end project lifecycle for **KNBS digital transformation**, including the KNBS website and the Stats-Chat AI-driven bot, significantly enhancing public data accessibility.</li>
-                <li>Managed high-impact innovation projects, such as the national **"AI Challenge,"** to integrate emerging technologies into the national government framework.</li>
-                <li>Execute rigorous **PMO protocols** by providing support in Project Planning, Risk Management, Change Control, and Benefits Realization to the Partnership Strategic Adviser.</li>
-                <li>Align regional technical capacity-building requests for KNBS (Kenya) and SNBS/CSD (Somalia) with the **National Strategies for the Development of Statistics (NSDS)** and ONS Strategy.</li>
-                <li>Monitoring comprehensive project expenditures and budget (**£100K per year**) compilations, ensuring **100% compliance** with Official Development Assistance (ODA) guidelines.</li>
-                <li>Development of concept notes and business cases to secure funding for critical activities, maintaining a clear **ROI** for all program-related investments.</li>
-                <li>Involved in the end-to-end delivery of the **2026 Kenya Data Festival** which I managed by collaborating with Government agencies, donor community, and NGOs to manage project milestones, stakeholder engagements, and logistical execution.</li>
+                <li>Managed the strategic partnership between <strong>KNBS</strong> and <strong>ONS (Office for National Statistics, UK)</strong>, aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
+                <li>Facilitated high-level international collaborations for the UK Government, acting as the primary liaison for the <strong>World Bank, Stats Sweden, GPSDD, and UN agencies</strong> to ensure delivery of mission-critical data initiatives for Kenya and Somalia.</li>
             </ul>
         </div>
 
