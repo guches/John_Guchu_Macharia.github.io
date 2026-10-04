@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience - Resume</title>
+    <title>Professional Resume & Portfolio</title>
     <style>
         /* Base Reset & Typography */
         * {
@@ -15,32 +15,84 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333333;
-            background-color: #f8f9fa;
+            background-color: #f4f6f9;
             padding: 40px 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 40px;
+            padding: 50px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
         }
 
-        /* Section Header */
+        /* Profile Header Section */
+        .profile-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #003366;
+            margin-bottom: 35px;
+        }
+        .profile-name {
+            font-size: 2.5rem;
+            color: #003366;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .profile-title {
+            font-size: 1.2rem;
+            color: #555555;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #666666;
+        }
+        .contact-info span strong {
+            color: #003366;
+        }
+
+        /* Section Layout */
         .section-title {
-            font-size: 1.5rem;
-            color: #003366; /* Deep Professional Blue */
+            font-size: 1.4rem;
+            color: #003366;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            border-bottom: 2px solid #003366;
-            padding-bottom: 8px;
-            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 6px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+
+        /* Grid for Core Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .skill-item {
+            background-color: #f0f4f8;
+            color: #003366;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-left: 4px solid #003366;
         }
 
         /* Job Entry Styling */
         .job-entry {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         .job-entry:last-child {
             margin-bottom: 0;
@@ -50,17 +102,17 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .job-title {
             font-size: 1.15rem;
             font-weight: 700;
             color: #111111;
-            text-transform: uppercase;
+            max-width: 75%;
         }
         .job-meta {
             font-size: 0.95rem;
-            color: #555555;
+            color: #4f5d75;
             font-weight: 600;
             margin-bottom: 8px;
         }
@@ -68,9 +120,10 @@
             font-size: 0.95rem;
             color: #777777;
             font-weight: 600;
+            white-space: nowrap;
         }
 
-        /* Bullet Lists */
+        /* Accomplishment Lists */
         .accomplishments-list {
             list-style-type: disc;
             margin-left: 20px;
@@ -79,107 +132,118 @@
         .accomplishments-list li {
             margin-bottom: 8px;
             font-size: 0.98rem;
+            text-align: justify;
         }
-        .accomplishments-list li strong {
-            color: #111111;
+        .accomplishments-list strong {
+            color: #000000;
         }
 
-        /* Nested List for Early Career / Projects */
+        /* Nested Lists for Projects */
         .nested-list {
             list-style-type: circle;
-            margin-left: 20px;
-            margin-top: 4px;
+            margin-left: 25px;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
         .nested-list li {
             margin-bottom: 4px;
             font-size: 0.95rem;
+            color: #555555;
         }
 
-        /* Responsive Breakpoint */
-        @media (max-width: 600px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             body {
                 padding: 15px 10px;
             }
             .container {
-                padding: 20px;
+                padding: 25px;
             }
             .job-header {
                 flex-direction: column;
             }
+            .job-title {
+                max-width: 100%;
+            }
             .job-timeline {
                 margin-top: 4px;
+                margin-bottom: 4px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
 </head>
 <body>
-  <a href="index.html">Back to Home</a>
+
 <div class="container">
-    <h2 class="section-title">Work Experience</h2>
-
-    <!-- Job 1 -->
-    <div class="job-entry">
-        <div class="job-header">
-            <h3 class="job-title">ONS Programme Partnership Manager to KNBS (Kenya National Bureau of Statistics) and Somalia Partnership (SNBS/CSD)</h3>
-            <span class="job-timeline">2022 – Present</span>
+    
+    <!-- Profile Header Section -->
+    <header class="profile-header">
+        <h1 class="profile-name">YOUR NAME</h1>
+        <div class="profile-title">International Partnership & Corporate Operations Leader</div>
+        <div class="contact-info">
+            <span><strong>Email:</strong> email@example.com</span>
+            <span><strong>Phone:</strong> +254 7XX XXX XXX</span>
+            <span><strong>Location:</strong> Nairobi, Kenya</span>
+            <span><strong>LinkedIn:</strong> ://linkedin.com</span>
         </div>
-        <div class="job-meta">British High Commission | Nairobi, Kenya</div>
-        <ul class="accomplishments-list">
-            <li>Managed the strategic partnership between **KNBS** and **ONS (Office of National Statistics, UK)** aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
-            <li>Facilitated high-level international collaborations for the UK Government acting as the primary liaison for the **World Bank, Stats Sweden, GPSDD, and UN agencies**, ensuring the delivery of mission-critical data initiatives for Kenya and Somalia.</li>
-            <li>Driving data and **AI capacity-building programs** across Kenyan Ministries, Departments, and Agencies (MDAs) to modernize public sector data governance and utilization.</li>
-            <li>Directed the end-to-end project lifecycle for **KNBS digital transformation**, including the KNBS website and the Stats-Chat AI-driven bot, significantly enhancing public data accessibility.</li>
-            <li>Managed high-impact innovation projects, such as the national **"AI Challenge,"** to integrate emerging technologies into the national government framework.</li>
-            <li>Execute rigorous **PMO protocols** by providing support in Project Planning, Risk Management, Change Control, and Benefits Realization to the Partnership Strategic Adviser.</li>
-            <li>Align regional technical capacity-building requests for KNBS (Kenya) and SNBS/CSD (Somalia) with the **National Strategies for the Development of Statistics (NSDS)** and ONS Strategy.</li>
-            <li>Monitoring comprehensive project expenditures and budget (**£100K per year**) compilations, ensuring **100% compliance** with Official Development Assistance (ODA) guidelines.</li>
-            <li>Development of concept notes and business cases to secure funding for critical activities, maintaining a clear **ROI** for all program-related investments.</li>
-            <li>Involved in the end-to-end delivery of the **2026 Kenya Data Festival** which I managed by collaborating with Government agencies, donor community, and NGOs to manage project milestones, stakeholder engagements, and logistical execution.</li>
-        </ul>
-    </div>
+    </header>
 
-    <!-- Job 2 -->
-    <div class="job-entry">
-        <div class="job-header">
-            <h3 class="job-title">Head of Customer Help Desk</h3>
-            <span class="job-timeline">2015 - 2022</span>
-        </div>
-        <div class="job-meta">British High Commission | Nairobi, Kenya</div>
-        <ul class="accomplishments-list">
-            <li>Re-engineered the onboarding and induction framework for arriving diplomats and their dependents and country-based staff, achieving a **98% success rate** for completion within the first 72 hours of arrival.</li>
-            <li>Resolved complex cross-functional requests by collaborating with IT, Finance, Procurement, HR, and Estates by mapping process and optimization of the **Corporate Service processes**, successfully identifying and removing structural bottlenecks that led to improved efficiencies.</li>
-            <li>Exceeded service level agreements (SLAs) by maintaining a **90% response rate within 24 hours** for all external guidance queries via digital and telephonic channels.</li>
-            <li>Improved customer satisfaction (CSAT) scores to **92%** by implementing data-driven feedback loops and utilizing survey insights to refine the end-to-end customer journey.</li>
-            <li>Transformed the **CRM system architecture** to enhance ticket tracking accuracy and reduce customer effort, significantly increasing the Help Desk’s overall throughput.</li>
-            <li>Led **LESA (Locally Engaged Staff Association)** in resolving employee concerns, major outcomes were: the conversion of terminal gratuity to pension scheme issues and maternity leave change for local Staff from 3 months to 6 months.</li>
-            <li>Spearheaded the team during high-pressure periods, including the **COVID-19 pandemic**, to ensure continuity of essential mission services and staff welfare.</li>
-            <li>Facilitated high-level diplomatic visits and logistics, ensuring all corporate and security requirements were met. The visits included **Boris Johnson (Foreign Secretary)** and **Theresa May (Prime Minister)**.</li>
-        </ul>
-    </div>
+    <!-- Professional Summary -->
+    <section>
+        <h2 class="section-title">Professional Summary</h2>
+        <p style="font-size: 1rem; color: #444444; text-align: justify;">
+            Highly accomplished Program and Operations Manager with extensive experience directing high-level strategic partnerships, cross-functional international collaborations, and large-scale digital transformations within diplomatic and corporate sectors. Proven track record driving AI capacity building, re-engineering complex customer workflows, managing key international stakeholder ecosystems (World Bank, UN, UK Gov), and delivering massive efficiency gains across national-level initiatives.
+        </p>
+    </section>
 
-    <!-- Job 3 -->
-    <div class="job-entry">
-        <div class="job-header">
-            <h3 class="job-title">Customer Service Manager</h3>
-            <span class="job-timeline">2013 - 2015</span>
+    <!-- Core Skills Grid -->
+    <section>
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Strategic Partnerships</div>
+            <div class="skill-item">Program Management (PMO)</div>
+            <div class="skill-item">Digital & AI Transformation</div>
+            <div class="skill-item">Stakeholder Engagement</div>
+            <div class="skill-item">Resource & Budget Allocation</div>
+            <div class="skill-item">Business Process Mapping</div>
+            <div class="skill-item">CRM & Architecture Design</div>
+            <div class="skill-item">Change Management</div>
         </div>
-        <div class="job-meta">KK Security Services – A GardaWorld Company | Nairobi, Kenya</div>
-        <ul class="accomplishments-list">
-            <li>Managed a team of **14 Customer Service Officers** distributed in 7 branches all over the country by managing their performance as per the KPI, Training on Modern customer services practices.</li>
-            <li>Re-engineered the customer service processes by mapping out the processes for **ISO certification** using Business process mapping tools.</li>
-            <li>Prepared a **customer service playbook** for the customer service section which resulted in ease of onboarding new customer service agents and cross-departmental training of the organisation.</li>
-            <li>Delivered a project to develop the **CRM (Microsoft Dynamics) system** that was used by the Sales, Customer Service and Marketing team. This led to Customer Agent ease, collaboration with the departments.</li>
-            <li>Designed the **Contact Center set-up** that improved the customer department efficiency and the Customer journey.</li>
-            <li>Improved the data integrity of the existing records in the ERP and this led to customer service and debt collection efficiency. The improvement was from an error rate of 65% to **only 3% of the records**.</li>
-            <li>Managed the contact center and customer service KPIs within the service level of **80%** and AHT (Average Handling Time) at **3mins 30secs** for calls received.</li>
-        </ul>
-    </div>
+    </section>
 
-    <!-- Job 4 -->
-    <div class="job-entry">
-        <div class="job-header">
-            <h3 class="job-title">Customer Care Team Manager</h3>
-            <span class="job-timeline">2009 - 2013</span>
+    <!-- Work Experience Section -->
+    <section>
+        <h2 class="section-title">Work Experience</h2>
+
+        <!-- Job 1 -->
+        <div class="job-entry">
+            <div class="job-header">
+                <h3 class="job-title">ONS Programme Partnership Manager to KNBS (Kenya National Bureau of Statistics) and Somalia Partnership (SNBS/CSD)</h3>
+                <span class="job-timeline">2022 – Present</span>
+            </div>
+            <div class="job-meta">British High Commission | Nairobi, Kenya</div>
+            <ul class="accomplishments-list">
+                <li>Managed the strategic partnership between **KNBS** and **ONS (Office of National Statistics, UK)** aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
+                <li>Facilitated high-level international collaborations for the UK Government acting as the primary liaison for the **World Bank, Stats Sweden, GPSDD, and UN agencies**, ensuring the delivery of mission-critical data initiatives for Kenya and Somalia.</li>
+                <li>Driving data and **AI capacity-building programs** across Kenyan Ministries, Departments, and Agencies (MDAs) to modernize public sector data governance and utilization.</li>
+                <li>Directed the end-to-end project lifecycle for **KNBS digital transformation**, including the KNBS website and the Stats-Chat AI-driven bot, significantly enhancing public data accessibility.</li>
+                <li>Managed high-impact innovation projects, such as the national **"AI Challenge,"** to integrate emerging technologies into the national government framework.</li>
+                <li>Execute rigorous **PMO protocols** by providing support in Project Planning, Risk Management, Change Control, and Benefits Realization to the Partnership Strategic Adviser.</li>
+                <li>Align regional technical capacity-building requests for KNBS (Kenya) and SNBS/CSD (Somalia) with the **National Strategies for the Development of Statistics (NSDS)** and ONS Strategy.</li>
+                <li>Monitoring comprehensive project expenditures and budget (**£100K per year**) compilations, ensuring **100% compliance** with Official Development Assistance (ODA) guidelines.</li>
+                <li>Development of concept notes and business cases to secure funding for critical activities, maintaining a clear **ROI** for all program-related investments.</li>
+                <li>Involved in the end-to-end delivery of the **2026 Kenya Data Festival** which I managed by collaborating with Government agencies, donor community, and NGOs to manage project milestones, stakeholder engagements, and logistical execution.</li>
+            </ul>
         </div>
-        <div class="job-meta">Telkom Kenya | Nairobi, Kenya</div>
-        <ul class="accomplishments-list">
+
+        <!-- Job 2 -->
+        <div class="job-entry">
+            <div class="job-header">
+                <h3 class="job-title">Head of Customer Help Desk</h3>
+                <span class="job-timeline">2015 - 2022</span>
+            </div>
+            <div class="job-meta">British High Commission | Nairobi, Kenya</div>
+            <ul class="accomplishments-list">
