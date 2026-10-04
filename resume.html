@@ -5,47 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Resume - International Partnership & Corporate Operations Leader</title>
     <style>
-        /* Base Reset & Typography */
+        /* Base Reset & Fluid Typography */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+        
+        /* 
+          Forced Scrolling Safeguard:
+          Ensures that even if an iframe, browser wrapper, or container tries to lock heights,
+          the page will strictly allow natural, infinite vertical scrolling.
+        */
+        html, body {
+            height: auto !important;
+            min-height: 100%;
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #333333;
             background-color: #f4f6f9;
             padding: 40px 20px;
         }
+        
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 50px;
+            padding: 40px 50px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            height: auto !important;
+            overflow: visible !important;
         }
 
         /* Profile Header Section */
         .profile-header {
             text-align: center;
-            padding-bottom: 30px;
+            padding-bottom: 25px;
             border-bottom: 3px solid #003366;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         .profile-name {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: #003366;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 5px;
         }
         .profile-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #555555;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             font-weight: 600;
             margin-bottom: 15px;
         }
@@ -62,43 +79,55 @@
         }
 
         /* Section Layout */
+        section {
+            margin-bottom: 30px;
+        }
         .section-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #003366;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 6px;
-            margin-top: 35px;
-            margin-bottom: 20px;
-        }
-
-        /* Grid Layouts */
-        .skills-grid, .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
+            padding-bottom: 4px;
             margin-bottom: 15px;
         }
-        .skill-item, .course-item {
+
+        /* Dynamic Grid Layouts */
+        .skills-grid, .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .skill-item {
             background-color: #f0f4f8;
             color: #003366;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             border-left: 4px solid #003366;
         }
-        .course-item {
-            background-color: #f9f9f9;
-            color: #333333;
-            border-left: 4px solid #4f5d75;
+        .cert-item {
+            background-color: #f9fbfd;
+            color: #444444;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.88rem;
             font-weight: 500;
+            border-left: 4px solid #4f5d75;
+        }
+
+        /* Split Columns for Lower Elements */
+        .bottom-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
         /* Job & Education Entry Styling */
         .job-entry, .edu-entry {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .job-entry:last-child, .edu-entry:last-child {
             margin-bottom: 0;
@@ -108,10 +137,10 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
         .job-title, .edu-degree {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #111111;
             max-width: 75%;
@@ -120,7 +149,7 @@
             font-size: 0.95rem;
             color: #4f5d75;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .job-timeline, .edu-timeline {
             font-size: 0.95rem;
@@ -136,28 +165,28 @@
             color: #444444;
         }
         .accomplishments-list li {
-            margin-bottom: 8px;
-            font-size: 0.98rem;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
             text-align: justify;
         }
         .accomplishments-list strong {
             color: #000000;
         }
 
-        /* Nested Lists for Projects */
+        /* Sub-project Internal Lists */
         .nested-list {
             list-style-type: circle;
-            margin-left: 25px;
-            margin-top: 5px;
-            margin-bottom: 8px;
+            margin-left: 20px;
+            margin-top: 4px;
+            margin-bottom: 4px;
         }
         .nested-list li {
-            margin-bottom: 4px;
-            font-size: 0.95rem;
+            margin-bottom: 3px;
+            font-size: 0.92rem;
             color: #555555;
         }
 
-        /* Responsive Design */
+        /* Responsive Mobile Layouts */
         @media (max-width: 768px) {
             body {
                 padding: 15px 10px;
@@ -172,26 +201,36 @@
                 max-width: 100%;
             }
             .job-timeline, .edu-timeline {
-                margin-top: 4px;
+                margin-top: 2px;
                 margin-bottom: 4px;
             }
-            .skills-grid, .courses-grid {
+            .skills-grid, .certifications-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .bottom-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
-        /* Print Layout Optimizations */
+        /* Automated Print Configurations */
         @media print {
-            body {
+            html, body {
                 background-color: #ffffff;
                 padding: 0;
+                overflow: visible !important;
             }
             .container {
                 box-shadow: none;
                 padding: 0;
                 max-width: 100%;
+                overflow: visible !important;
             }
-            .job-entry, .edu-entry, section {
+            section {
+                page-break-inside: auto;
+                break-inside: auto;
+            }
+            .job-entry, .edu-entry {
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
@@ -207,8 +246,8 @@
         <h1 class="profile-name">YOUR NAME</h1>
         <div class="profile-title">International Partnership & Corporate Operations Leader</div>
         <div class="contact-info">
-            <span><strong>Email:</strong> email@example.com</span>
-            <span><strong>Phone:</strong> +254 7XX XXX XXX</span>
+            <span><strong>Email:</strong> john.g.macharia@gmail.com</span>
+            <span><strong>Phone:</strong> +254 726 396 674</span>
             <span><strong>Location:</strong> Nairobi, Kenya</span>
             <span><strong>LinkedIn:</strong> linkedin.com</span>
         </div>
@@ -217,7 +256,7 @@
     <!-- Professional Summary -->
     <section>
         <h2 class="section-title">Professional Summary</h2>
-        <p style="font-size: 1rem; color: #444444; text-align: justify;">
+        <p style="font-size: 0.98rem; color: #444444; text-align: justify;">
             Highly accomplished Program and Operations Manager with extensive experience directing high-level strategic partnerships, cross-functional international collaborations, and large-scale digital transformations within diplomatic and corporate sectors. Proven track record driving AI capacity building, re-engineering complex customer workflows, managing key international stakeholder ecosystems (World Bank, UN, UK Gov), and delivering massive efficiency gains across national-level initiatives.
         </p>
     </section>
@@ -241,16 +280,6 @@
         </div>
     </section>
 
-    <!-- Key Achievements -->
-    <section>
-        <h2 class="section-title">Key Achievements</h2>
-        <ul class="accomplishments-list" style="margin-bottom: 15px;">
-            <li><strong>Metrics Improvement:</strong> Consistently elevated core service performance metrics (CSAT, NPS, SLA adherence) across diverse corporate sectors through target business process management and deep process re-engineering.</li>
-            <li><strong>Stakeholder Matrix Management:</strong> Recognized for strong international stakeholder management, robust delivery visibility, and an innate ability to drive fast action and closures across matrixed, complex environments.</li>
-            <li><strong>PMP Preparation:</strong> Successfully completed 35 contact hours of formal PMP training from Computer Pride (certification exam currently pending).</li>
-        </ul>
-    </section>
-
     <!-- Work Experience Section -->
     <section>
         <h2 class="section-title">Work Experience</h2>
@@ -258,16 +287,9 @@
         <!-- Job 1 -->
         <div class="job-entry">
             <div class="job-header">
-                <h3 class="job-title">ONS Programme Partnership Manager to KNBS (Kenya National Bureau of Statistics) and Somalia Partnership (SNBS/CSD)</h3>
+                <h3 class="job-title">ONS Programme Partnership Manager to KNBS and Somalia Partnership (SNBS/CSD)</h3>
                 <span class="job-timeline">2022 – Present</span>
             </div>
             <div class="job-meta">British High Commission | Nairobi, Kenya</div>
             <ul class="accomplishments-list">
-                <li>Managed the strategic partnership between <strong>KNBS</strong> and <strong>ONS (Office for National Statistics, UK)</strong>, aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
-                <li>Facilitated high-level international collaborations for the UK Government, acting as the primary liaison for the <strong>World Bank, Stats Sweden, GPSDD, and UN agencies</strong> to ensure delivery of mission-critical data initiatives for Kenya and Somalia.</li>
-            </ul>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="job-entry">
-            <div class="job-header">
+                <li>Managed the strategic partnership between <strong>KNBS</strong> and <strong>ONS (Office for National Statistics, UK)</strong> aligning cross-organizational goals to elevate national statistical standards and methodologies.</li>
